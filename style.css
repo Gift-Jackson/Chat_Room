@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    cursor: default;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #7b68ee;
+    --secondary-color: #fefefe;
+    --bg-color: #f1f2f3;
+    --text-color: #444;
+    --green-color:#0aa14e;
+    --box-shadow: 0 2px 5px rgba(0,0,0,.095);
+}
+
+.dark-theme{
+    --primary-color: #7b68ee;
+    --secondary-color:#272a49 ;
+    --bg-color:  #121322;
+    --text-color: #eee;
+    --box-shadow: 0 20px 10px 10px #121322;
+}
+
+body {
+    background-color: var(--bg-color);
+    transition: background-color .3s ease-in-out;
+}
+body::-webkit-scrollbar{
+    width: 4px;
+    background-color: var(--secondary-color);
+}
+body::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+    border-radius: 50px;
+}
+
+/* Header */
+header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: var(--secondary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    transition: background-color .3s ease-in-out;
+}
+
+header h2 {
+    color: var(--text-color);
+}
+
+.mark {
+    color: var(--primary-color);
+}
+
+.right-side {
+    display: flex;
+    gap: 20px;
+}
+
+.theme {
+    display: flex;
+    border-radius: .3rem;
+    background-color: var(--bg-color);
+}
+
+.theme span {
+    color: var(--text-color);
+}
+
+.theme button {
+    background-color: transparent;
+    border: 0;
+    padding: .2rem .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: var(--box-shadow); */
+    /* border: 1px solid rgba(0, 0, 0, .25); */
+}
+
+.theme button.active {
+    /* box-shadow: var(--box-shadow); */
+    box-shadow: 0 2px 5px rgba(0,0,0,.095);
+    background-color: var(--secondary-color);
+    /* border: 1px solid #eee; */
+}
+
+.theme button.active span {
+    color: var(--primary-color);
+}
+
+.logout-btn {
+    padding: .5rem 1.2rem;
+    border: 1px solid var(--text-color);
+    background-color: transparent;
+    color: var(--text-color);
+    border-radius: .3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+}
+.logout-btn:hover{
+    background-color: var(--primary-color);
+    color: #fefefe;
+    border: none;
+}
+
+/* main */
+main {
+    width: 60%;
+    margin: auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.message-column{
+    margin: .5rem 0;
+}
+
+.user-message{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.user-message-box{
+    background-color: var(--primary-color);
+    padding: .8rem;
+    border-radius: 1rem 1rem 0 1rem;
+    max-width: 70%;
+    transition: background-color .3s ease-in-out;
+}
+.user-message-box p{
+    color: #fefefe;
+    font-size: 14px;
+}
+.receiver-message{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.receiver-message-box{
+    background-color: var(--secondary-color);
+    padding: .8rem;
+    border-radius: 1rem 1rem 1rem 0;
+    max-width: 70%;
+    transition: background-color .3s ease-in-out;
+}
+.receiver-message-box p{
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+.receiver-message-box span{
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: .2rem .5rem;
+    font-size: 11px;
+    border-radius: 50px;
+}
+
+.update{
+    text-transform: italics;
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--green-color);
+    margin: 1rem 0;
+}
+.receiver-username{
+    text-transform: capitalize;
+}
+
+
+/* send message */
+.input-control{
+    background-color: var(--secondary-color);
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    transition: background-color .3s ease-in-out;
+}
+.wrap{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
+.wrap button{
+    width: 40px;
+    height: 40px;
+    border-radius: .3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: #fefefe;
+    border: none;
+}
+
+.wrap button span{
+    font-size: 20px;
+}
+
+.wrap button:hover{
+    filter: brightness(80%);
+}
+.wrap textarea{
+    height: 40px;
+    width: 100%;
+    border: 0;
+    border-radius: .3rem;
+    padding-top: 10px;
+    padding-left: 15px;
+    resize: none;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.wrap textarea.error{
+    background-color: rgb(248, 218, 224);
+    border: 1px solid crimson;
+}
+
+.wrap textarea::-webkit-scrollbar{
+    width: 3px;
+}
+.wrap textarea::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+}
+
+.to-bottom{
+    background-color: var(--secondary-color);
+    padding: .3rem;
+    border-radius: 50%;
+    transform: rotate(-90deg);
+    color: var(--primary-color);
+    position: fixed;
+    right: 15px;
+    bottom: 70px;
+    display: none;
+}
+.to-bottom.active{
+    display: block;
+}
+
+/* form */
+.container{
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+}
+.form-container{
+    width: 400px;
+    margin: auto;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: .3re;
+}
+.form-container h1{
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+.form-container input{
+    width: 100%;
+    height: 50px;
+    border: 0;
+    background-color: var(--bg-color);
+    border-radius: .3rem;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+.form-container button{
+    width: 50%;
+    height: 48px;
+    border: 0;
+    border-radius: .3rem;
+    background-color: var(--primary-color);
+    color: #fefefe;
+    font-size: 19px;
+}
+.form-container button:hover{
+    filter: brightness(80%);
+}
+
+
+/* media queries */
+@media (max-width:750px) {
+    main, .wrap{
+        width: 80%;
+    }
+}
+
+@media (max-width:450px) {
+    main, .wrap{
+        width: 95%;
+    }
+
+    h2{
+        font-size: 18px;
+    }
+    .extended-text{
+        display: none;
+    }
+
+    .theme button{
+        padding: .1rem .3rem;
+    }
+    .logout-btn{
+        padding: .3rem .7rem;
+    }
+    .wrap button{
+        width: 50px;
+    }
+    .receiver-message-box p,
+    .user-message-box p{
+        font-size: 13px;
+    }
+}
